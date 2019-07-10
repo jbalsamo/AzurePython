@@ -1,5 +1,4 @@
 import logging
-import time as time
 import numpy as np
 import matplotlib.pyplot as plt
 import azure.functions as func
