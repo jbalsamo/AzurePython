@@ -8,6 +8,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     num = req.params.get('number')
     exp = req.params.get('exponent')
+    value = null
     if not (num and exp):
         try:
             req_body = req.get_json()
@@ -19,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             value = num**exp;
 
     if value:
-        return func.HttpResponse("Answer: {value}")
+        return func.HttpResponse(f"Answer: {value}")
     else:
         return func.HttpResponse(
              "Please pass a number and exponent on the query string or in the request body",
